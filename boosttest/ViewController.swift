@@ -61,7 +61,10 @@ class ViewController: UIViewController {
 
 //MARK: -> UITableViewDelegate
 extension ViewController : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let currentCell = tableView.cellForRow(at: indexPath) as! ContactTableViewCell
+        currentCell.viewModel!.tapCell(tableView, indexPath: indexPath, nc: self.navigationController!, modelArray: modelArray)
+    }
 }
 
 //MARK: -> UITableViewDataSource

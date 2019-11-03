@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E85BB31236EAAA100C0F788 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E85BB30236EAAA100C0F788 /* Extension.swift */; };
+		7E85BB34236EABDD00C0F788 /* AddContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E85BB32236EABDD00C0F788 /* AddContactTableViewCell.swift */; };
+		7E85BB35236EABDD00C0F788 /* AddContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E85BB33236EABDD00C0F788 /* AddContactTableViewCell.xib */; };
+		7E85BB37236EAC8F00C0F788 /* AddContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E85BB36236EAC8F00C0F788 /* AddContactCellViewModel.swift */; };
 		7EFCBE75236E61EA002E57BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE74236E61EA002E57BB /* AppDelegate.swift */; };
 		7EFCBE77236E61EA002E57BB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE76236E61EA002E57BB /* SceneDelegate.swift */; };
 		7EFCBE79236E61EA002E57BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE78236E61EA002E57BB /* ViewController.swift */; };
@@ -20,6 +24,7 @@
 		7EFCBEAC236E660A002E57BB /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */; };
 		7EFCBEAD236E660A002E57BB /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */; };
 		7EFCBEB2236E6846002E57BB /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */; };
+		7EFCBEB4236E7C25002E57BB /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEB3236E7C25002E57BB /* AddContactViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E85BB30236EAAA100C0F788 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7E85BB32236EABDD00C0F788 /* AddContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactTableViewCell.swift; sourceTree = "<group>"; };
+		7E85BB33236EABDD00C0F788 /* AddContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddContactTableViewCell.xib; sourceTree = "<group>"; };
+		7E85BB36236EAC8F00C0F788 /* AddContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactCellViewModel.swift; sourceTree = "<group>"; };
 		7EFCBE71236E61EA002E57BB /* boosttest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = boosttest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFCBE74236E61EA002E57BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EFCBE76236E61EA002E57BB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +68,7 @@
 		7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
 		7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
+		7EFCBEB3236E7C25002E57BB /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +130,8 @@
 				7EFCBE7D236E61EB002E57BB /* Assets.xcassets */,
 				7EFCBE7F236E61EB002E57BB /* LaunchScreen.storyboard */,
 				7EFCBE82236E61EB002E57BB /* Info.plist */,
+				7EFCBEB3236E7C25002E57BB /* AddContactViewController.swift */,
+				7E85BB30236EAAA100C0F788 /* Extension.swift */,
 			);
 			path = boosttest;
 			sourceTree = "<group>";
@@ -155,6 +167,8 @@
 			children = (
 				7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */,
 				7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */,
+				7E85BB32236EABDD00C0F788 /* AddContactTableViewCell.swift */,
+				7E85BB33236EABDD00C0F788 /* AddContactTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -163,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */,
+				7E85BB36236EAC8F00C0F788 /* AddContactCellViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -271,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E85BB35236EABDD00C0F788 /* AddContactTableViewCell.xib in Resources */,
 				7EFCBE81236E61EB002E57BB /* LaunchScreen.storyboard in Resources */,
 				7EFCBE7E236E61EB002E57BB /* Assets.xcassets in Resources */,
 				7EFCBE7C236E61EA002E57BB /* Main.storyboard in Resources */,
@@ -300,12 +316,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E85BB34236EABDD00C0F788 /* AddContactTableViewCell.swift in Sources */,
 				7EFCBEA8236E64E9002E57BB /* Contact.swift in Sources */,
 				7EFCBEAD236E660A002E57BB /* ContactTableViewCell.swift in Sources */,
+				7EFCBEB4236E7C25002E57BB /* AddContactViewController.swift in Sources */,
 				7EFCBE79236E61EA002E57BB /* ViewController.swift in Sources */,
 				7EFCBEB2236E6846002E57BB /* ContactCellViewModel.swift in Sources */,
 				7EFCBE75236E61EA002E57BB /* AppDelegate.swift in Sources */,
+				7E85BB37236EAC8F00C0F788 /* AddContactCellViewModel.swift in Sources */,
 				7EFCBE77236E61EA002E57BB /* SceneDelegate.swift in Sources */,
+				7E85BB31236EAAA100C0F788 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

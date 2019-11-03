@@ -18,8 +18,7 @@ class ContactTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        circularView.layer.cornerRadius = circularView.frame.size.width / 2.0
-        circularView.clipsToBounds = true
+        circularView.makeCirclularView()
         // Initialization code
     }
     

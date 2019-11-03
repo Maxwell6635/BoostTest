@@ -42,6 +42,9 @@
                     <navigationItem key="navigationItem" id="UXC-UI-0p6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PUO-N5-YJi">
                             <color key="tintColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="KiM-f8-8Xz" kind="show" id="n3c-Ir-lfL"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
@@ -52,6 +55,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="uTY-b8-9Or">
+            <objects>
+                <viewController storyboardIdentifier="AddContactViewController" id="KiM-f8-8Xz" customClass="AddContactViewController" customModule="boosttest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Od1-CB-jmW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGg-dJ-SHp">
+                                <rect key="frame" x="127" y="112" width="160" height="160"/>
+                                <color key="backgroundColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="jqv-gT-ICG"/>
+                                    <constraint firstAttribute="width" constant="160" id="zkp-7t-jHW"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xGQ-3Q-mxh">
+                                <rect key="frame" x="0.0" y="296" width="414" height="576"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddContactTableViewCell" id="xOF-hR-W23">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xOF-hR-W23" id="k9H-ls-Whx">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xGQ-3Q-mxh" firstAttribute="top" secondItem="pGg-dJ-SHp" secondAttribute="bottom" constant="24" id="Dja-V7-Xvc"/>
+                            <constraint firstItem="xGQ-3Q-mxh" firstAttribute="trailing" secondItem="RVu-GL-q8J" secondAttribute="trailing" id="WEP-UH-LCI"/>
+                            <constraint firstItem="pGg-dJ-SHp" firstAttribute="top" secondItem="RVu-GL-q8J" secondAttribute="top" constant="24" id="XIW-sK-duM"/>
+                            <constraint firstItem="xGQ-3Q-mxh" firstAttribute="leading" secondItem="RVu-GL-q8J" secondAttribute="leading" id="ek6-zV-g5B"/>
+                            <constraint firstAttribute="bottom" secondItem="xGQ-3Q-mxh" secondAttribute="bottom" constant="24" id="obs-4P-T2z"/>
+                            <constraint firstItem="pGg-dJ-SHp" firstAttribute="centerX" secondItem="Od1-CB-jmW" secondAttribute="centerX" id="rRE-ri-WKY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RVu-GL-q8J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kfe-Do-wDW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pAx-8s-46c">
+                            <color key="tintColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="cancelClick:" destination="KiM-f8-8Xz" id="RI1-vs-0se"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bDI-O5-GH6">
+                            <color key="tintColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="saveClick:" destination="KiM-f8-8Xz" id="HVh-vA-ou4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="circularView" destination="pGg-dJ-SHp" id="Fnk-8Z-koG"/>
+                        <outlet property="tableView" destination="xGQ-3Q-mxh" id="Yaj-3X-4dq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1BW-9A-uFG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1926.0869565217392" y="138.61607142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PaC-Z3-F3m">

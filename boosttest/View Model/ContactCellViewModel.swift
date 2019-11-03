@@ -24,4 +24,12 @@ class ContactCellViewModel {
         cell.configure(self)
         return cell
     }
+    
+    func tapCell(_ tableView: UITableView, indexPath: IndexPath, nc : UINavigationController, modelArray : [Contact]) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "AddContactViewController") as! AddContactViewController
+        vc.contact = contact
+        vc.modelArray = modelArray
+        nc.pushViewController(vc, animated: true)
+    }
 }
