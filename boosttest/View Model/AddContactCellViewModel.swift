@@ -11,7 +11,6 @@ import UIKit
 
 class AddContactCellViewModel {
     var contact : Contact
-    let name: String
     let reuseIdentifier = "AddContactTableViewCell"
     let mainSectionArray = ["First Name", "Last Name"]
     let subSectionArray = ["Email", "Phone"]
@@ -20,7 +19,6 @@ class AddContactCellViewModel {
     
     init(contact: Contact) {
         self.contact = contact
-        name = ("\(contact.firstName) \(contact.lastName)")
     }
     
     func cellInstance(_ tableView: UITableView, indexPath: IndexPath, delegate : UITextFieldDelegate) -> UITableViewCell {
@@ -83,5 +81,21 @@ class AddContactCellViewModel {
         contact.phone = textFields[3].text!
         
         return valid
+    }
+    
+    func getUpdatedContact(_ modelArray : [Contact]) -> [Contact] {
+        for modelContact in modelArray {
+            if (self.contact.id ==  modelContact.id) {
+//                if (modelContact == self.contact) {
+//                    showErrorMessage?("No changes found.")
+//                } else {
+                    modelContact.firstName = contact.firstName
+                    modelContact.lastName = contact.lastName
+                    modelContact.email = contact.email
+                    modelContact.phone = contact.phone
+//                }
+            }
+        }
+        return modelArray
     }
 }

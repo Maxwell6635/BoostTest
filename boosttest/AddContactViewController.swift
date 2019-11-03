@@ -17,6 +17,7 @@ class AddContactViewController: UIViewController {
     var modelArray : [Contact]?
     var textFields : [UITextField] = []
     var addContactViewModel : AddContactCellViewModel?
+    var isEditMode : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +36,14 @@ class AddContactViewController: UIViewController {
     
     @IBAction func saveClick(_ sender: Any) {
         if ((addContactViewModel?.validated(textFields))!) {
-            modelArray!.append(addContactViewModel!.contact)
-            writeToFile()
+            if (!isEditMode) {
+                modelArray!.append(addContactViewModel!.contact)
+                writeToFile()
+            } else {
+                let tempArray = addContactViewModel!.getUpdatedContact(modelArray!)
+                modelArray = tempArray
+                writeToFile()
+            }
         }
     }
     

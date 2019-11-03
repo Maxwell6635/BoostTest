@@ -30,6 +30,7 @@ class ContactCellViewModel {
         let vc = storyBoard.instantiateViewController(withIdentifier: "AddContactViewController") as! AddContactViewController
         vc.contact = contact
         vc.modelArray = modelArray
+        vc.isEditMode = true
         nc.pushViewController(vc, animated: true)
     }
 }
