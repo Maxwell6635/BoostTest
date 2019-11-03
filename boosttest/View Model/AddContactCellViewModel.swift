@@ -84,18 +84,17 @@ class AddContactCellViewModel {
     }
     
     func getUpdatedContact(_ modelArray : [Contact]) -> [Contact] {
-        for modelContact in modelArray {
-            if (self.contact.id ==  modelContact.id) {
-//                if (modelContact == self.contact) {
-//                    showErrorMessage?("No changes found.")
-//                } else {
-                    modelContact.firstName = contact.firstName
-                    modelContact.lastName = contact.lastName
-                    modelContact.email = contact.email
-                    modelContact.phone = contact.phone
-//                }
+        var tempArray = modelArray
+        for (index, element) in modelArray.enumerated() {
+            if (self.contact.id ==  element.id) {
+                if (element == self.contact) {
+                    showErrorMessage?("No changes found.")
+                } else {
+                    tempArray.remove(at: index)
+                    tempArray.insert(contact, at: index)
+                }
             }
         }
-        return modelArray
+        return tempArray
     }
 }

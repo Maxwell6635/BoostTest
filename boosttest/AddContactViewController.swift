@@ -38,12 +38,11 @@ class AddContactViewController: UIViewController {
         if ((addContactViewModel?.validated(textFields))!) {
             if (!isEditMode) {
                 modelArray!.append(addContactViewModel!.contact)
-                writeToFile()
             } else {
                 let tempArray = addContactViewModel!.getUpdatedContact(modelArray!)
                 modelArray = tempArray
-                writeToFile()
             }
+            writeToFile()
         }
     }
     
