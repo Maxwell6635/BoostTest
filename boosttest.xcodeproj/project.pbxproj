@@ -17,6 +17,9 @@
 		7EFCBE97236E61EC002E57BB /* boosttestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE96236E61EC002E57BB /* boosttestUITests.swift */; };
 		7EFCBEA5236E6445002E57BB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCBEA4236E6445002E57BB /* data.json */; };
 		7EFCBEA8236E64E9002E57BB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEA7236E64E9002E57BB /* Contact.swift */; };
+		7EFCBEAC236E660A002E57BB /* ContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */; };
+		7EFCBEAD236E660A002E57BB /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */; };
+		7EFCBEB2236E6846002E57BB /* ContactCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		7EFCBE98236E61EC002E57BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7EFCBEA4236E6445002E57BB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		7EFCBEA7236E64E9002E57BB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactTableViewCell.xib; sourceTree = "<group>"; };
+		7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
+		7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 		7EFCBE73236E61EA002E57BB /* boosttest */ = {
 			isa = PBXGroup;
 			children = (
+				7EFCBEAE236E6811002E57BB /* View Model */,
+				7EFCBEA9236E65F4002E57BB /* Cell */,
 				7EFCBEA6236E64DE002E57BB /* Modal */,
 				7EFCBEA4236E6445002E57BB /* data.json */,
 				7EFCBE74236E61EA002E57BB /* AppDelegate.swift */,
@@ -140,6 +148,23 @@
 				7EFCBEA7236E64E9002E57BB /* Contact.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		7EFCBEA9236E65F4002E57BB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7EFCBEAB236E660A002E57BB /* ContactTableViewCell.swift */,
+				7EFCBEAA236E660A002E57BB /* ContactTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		7EFCBEAE236E6811002E57BB /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				7EFCBEB1236E6846002E57BB /* ContactCellViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +274,7 @@
 				7EFCBE81236E61EB002E57BB /* LaunchScreen.storyboard in Resources */,
 				7EFCBE7E236E61EB002E57BB /* Assets.xcassets in Resources */,
 				7EFCBE7C236E61EA002E57BB /* Main.storyboard in Resources */,
+				7EFCBEAC236E660A002E57BB /* ContactTableViewCell.xib in Resources */,
 				7EFCBEA5236E6445002E57BB /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7EFCBEA8236E64E9002E57BB /* Contact.swift in Sources */,
+				7EFCBEAD236E660A002E57BB /* ContactTableViewCell.swift in Sources */,
 				7EFCBE79236E61EA002E57BB /* ViewController.swift in Sources */,
+				7EFCBEB2236E6846002E57BB /* ContactCellViewModel.swift in Sources */,
 				7EFCBE75236E61EA002E57BB /* AppDelegate.swift in Sources */,
 				7EFCBE77236E61EA002E57BB /* SceneDelegate.swift in Sources */,
 			);
