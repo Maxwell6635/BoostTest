@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Contacts-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="boosttest" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="UXC-UI-0p6">
+                    <navigationItem key="navigationItem" title="Contacts" id="UXC-UI-0p6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YfZ-Dh-Jqy">
                             <color key="tintColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
