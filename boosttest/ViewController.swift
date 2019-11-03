@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshContactData), name: NSNotification.Name(rawValue: "refresh"), object: nil)
         tableView.register(UINib(nibName: "ContactTableViewCell", bundle: nil), forCellReuseIdentifier: "ContactTableViewCell")
         tableView.delegate = self
         tableView.dataSource = self
@@ -41,6 +42,13 @@ class ViewController: UIViewController {
     
     @objc private func refreshContactData(_ sender: Any) {
         fetchContactData()
+    }
+    
+    @IBAction func addClick(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "AddContactViewController") as! AddContactViewController
+        vc.modelArray = modelArray
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     private func fetchContactData() {

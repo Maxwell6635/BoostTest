@@ -28,3 +28,47 @@ extension UITextField {
         self.inputAccessoryView = keyboardToolbar
     }
 }
+
+extension String {
+    func isValidEmail() -> Bool {
+        // here, `try!` will always succeed because the pattern is valid
+        let regex = try! NSRegularExpression(pattern: "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$", options: .caseInsensitive)
+        return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
+}
+
+extension UIViewController {
+    func showErrorMessage(_ message: String) {
+        let alertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel) { (action) in
+        }
+        
+        alertController.addAction(okButton)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showErrorMessage(_ message: String, completion: @escaping (() -> Void)) {
+        let alertController = UIAlertController(title: nil, message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel) { (action) in
+            completion()
+        }
+        
+        alertController.addAction(okButton)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func showInfoMessage(_ message: String) {
+        let alertController = UIAlertController(title: nil, message: NSLocalizedString(message, comment: ""), preferredStyle: .alert)
+        
+        let okButton = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel) { (action) in
+        }
+        
+        alertController.addAction(okButton)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+}

@@ -40,10 +40,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="UXC-UI-0p6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PUO-N5-YJi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="YfZ-Dh-Jqy">
                             <color key="tintColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="KiM-f8-8Xz" kind="show" id="n3c-Ir-lfL"/>
+                                <action selector="addClick:" destination="BYZ-38-t0r" id="DZT-tG-Cjt"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

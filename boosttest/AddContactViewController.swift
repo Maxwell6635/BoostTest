@@ -14,7 +14,7 @@ class AddContactViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var contact : Contact?
-    var modelArray : [Contact] = []
+    var modelArray : [Contact]?
     var textFields : [UITextField] = []
     var addContactViewModel : AddContactCellViewModel?
     
@@ -25,9 +25,7 @@ class AddContactViewController: UIViewController {
             contact = Contact.init(id: UUID().uuidString, firstName: "", lastName: "", email: "", phone: "")
         }
         addContactViewModel = AddContactCellViewModel(contact: contact!)
-        tableView.register(UINib(nibName: "AddContactTableViewCell", bundle: nil), forCellReuseIdentifier: "AddContactTableViewCell")
-        tableView.delegate = self
-        tableView.dataSource = self
+        setupBinding()
         // Do any additional setup after loading the view.
     }
     
@@ -36,10 +34,44 @@ class AddContactViewController: UIViewController {
     }
     
     @IBAction func saveClick(_ sender: Any) {
+        if ((addContactViewModel?.validated(textFields))!) {
+            modelArray!.append(addContactViewModel!.contact)
+            writeToFile()
+        }
+    }
+    
+    func setupBinding() {
+        
+        tableView.register(UINib(nibName: "AddContactTableViewCell", bundle: nil), forCellReuseIdentifier: "AddContactTableViewCell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        addContactViewModel?.showInfoMessage = { [weak self] message in
+            self?.showInfoMessage(message)
+        }
+        
+        addContactViewModel?.showErrorMessage = { [weak self] message in
+            self?.showErrorMessage(message)
+        }
     }
     
     func dimissController() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    func writeToFile() {
+        let path = Bundle.main.url(forResource: "data", withExtension: "json")!
+        print(path)
+        do{
+            let encoder = JSONEncoder()
+            encoder.outputFormatting = .prettyPrinted
+            let JsonData = try encoder.encode(modelArray)
+            try JsonData.write(to: path)
+            navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "refresh"), object: nil)
+        } catch let parsingError {
+            print("Error", parsingError)
+        }
     }
 }
 

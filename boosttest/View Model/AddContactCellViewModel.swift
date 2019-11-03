@@ -15,6 +15,8 @@ class AddContactCellViewModel {
     let reuseIdentifier = "AddContactTableViewCell"
     let mainSectionArray = ["First Name", "Last Name"]
     let subSectionArray = ["Email", "Phone"]
+    var showErrorMessage: ((String) -> Void)?
+    var showInfoMessage: ((String) -> Void)?
     
     init(contact: Contact) {
         self.contact = contact
@@ -50,5 +52,36 @@ class AddContactCellViewModel {
             }
         }
         return cell
+    }
+    
+    func validated(_ textFields : [UITextField]) -> Bool {
+        var valid: Bool = true
+        
+        if (textFields[0].text!.isEmpty){
+            textFields[0].attributedPlaceholder = NSAttributedString(string: "Please enter first name", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            valid = false
+        } else {
+            contact.firstName = textFields[0].text!
+        }
+        
+        if (textFields[1].text!.isEmpty){
+            textFields[1].attributedPlaceholder = NSAttributedString(string:"Please enter last name",attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            valid = false
+        } else {
+            contact.lastName = textFields[1].text!
+        }
+        
+        if (!textFields[2].text!.isEmpty) {
+            if ((textFields[2].text!.isValidEmail())) {
+                contact.email =  textFields[2].text!
+            } else {
+                showErrorMessage?("Please enter valid email.")
+                valid = false
+            }
+        }
+        
+        contact.phone = textFields[3].text!
+        
+        return valid
     }
 }
