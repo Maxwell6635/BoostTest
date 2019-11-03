@@ -45,6 +45,7 @@ class AddContactCellViewModel {
             } else {
                 cell.textField.text = contact.phone
                 cell.textField.keyboardType = .phonePad
+                cell.textField.addDoneButtonOnKeyboard()
                 cell.textField.tag = 3
             }
         }

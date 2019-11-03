@@ -15,6 +15,7 @@ class AddContactViewController: UIViewController {
     
     var contact : Contact?
     var modelArray : [Contact] = []
+    var textFields : [UITextField] = []
     var addContactViewModel : AddContactCellViewModel?
     
     override func viewDidLoad() {
@@ -74,6 +75,7 @@ extension AddContactViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = addContactViewModel!.cellInstance(tableView, indexPath: indexPath, delegate: self) as! AddContactTableViewCell
+        textFields.append(cell.textField)
         return cell
     }
 }
@@ -91,4 +93,16 @@ extension AddContactViewController: UITableViewDelegate {
 
 //MARK: -> UITextFieldDelegate
 extension AddContactViewController: UITextFieldDelegate{
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if(textField.tag == 3) {
+            textField.returnKeyType = UIReturnKeyType.done
+        } else {
+            textField.returnKeyType = UIReturnKeyType.next
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textFields[textField.tag + 1].becomeFirstResponder()
+        return false
+    }
 }
