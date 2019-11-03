@@ -15,6 +15,8 @@
 		7EFCBE81236E61EB002E57BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCBE7F236E61EB002E57BB /* LaunchScreen.storyboard */; };
 		7EFCBE8C236E61EC002E57BB /* boosttestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE8B236E61EC002E57BB /* boosttestTests.swift */; };
 		7EFCBE97236E61EC002E57BB /* boosttestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBE96236E61EC002E57BB /* boosttestUITests.swift */; };
+		7EFCBEA5236E6445002E57BB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7EFCBEA4236E6445002E57BB /* data.json */; };
+		7EFCBEA8236E64E9002E57BB /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EFCBEA7236E64E9002E57BB /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		7EFCBE92236E61EC002E57BB /* boosttestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = boosttestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EFCBE96236E61EC002E57BB /* boosttestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = boosttestUITests.swift; sourceTree = "<group>"; };
 		7EFCBE98236E61EC002E57BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EFCBEA4236E6445002E57BB /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7EFCBEA7236E64E9002E57BB /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 		7EFCBE73236E61EA002E57BB /* boosttest */ = {
 			isa = PBXGroup;
 			children = (
+				7EFCBEA6236E64DE002E57BB /* Modal */,
+				7EFCBEA4236E6445002E57BB /* data.json */,
 				7EFCBE74236E61EA002E57BB /* AppDelegate.swift */,
 				7EFCBE76236E61EA002E57BB /* SceneDelegate.swift */,
 				7EFCBE78236E61EA002E57BB /* ViewController.swift */,
@@ -126,6 +132,14 @@
 				7EFCBE98236E61EC002E57BB /* Info.plist */,
 			);
 			path = boosttestUITests;
+			sourceTree = "<group>";
+		};
+		7EFCBEA6236E64DE002E57BB /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				7EFCBEA7236E64E9002E57BB /* Contact.swift */,
+			);
+			path = Modal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +249,7 @@
 				7EFCBE81236E61EB002E57BB /* LaunchScreen.storyboard in Resources */,
 				7EFCBE7E236E61EB002E57BB /* Assets.xcassets in Resources */,
 				7EFCBE7C236E61EA002E57BB /* Main.storyboard in Resources */,
+				7EFCBEA5236E6445002E57BB /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFCBEA8236E64E9002E57BB /* Contact.swift in Sources */,
 				7EFCBE79236E61EA002E57BB /* ViewController.swift in Sources */,
 				7EFCBE75236E61EA002E57BB /* AppDelegate.swift in Sources */,
 				7EFCBE77236E61EA002E57BB /* SceneDelegate.swift in Sources */,
@@ -366,7 +382,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +436,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -437,6 +453,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9R547VF53;
 				INFOPLIST_FILE = boosttest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -455,6 +472,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = J9R547VF53;
 				INFOPLIST_FILE = boosttest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
